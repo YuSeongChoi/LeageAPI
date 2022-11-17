@@ -11,6 +11,17 @@
 		5D16E4162924B11B003C217F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16E4152924B11B003C217F /* ContentView.swift */; };
 		5D16E4182924B11F003C217F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D16E4172924B11F003C217F /* Assets.xcassets */; };
 		5D16E41B2924B11F003C217F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D16E41A2924B11F003C217F /* Preview Assets.xcassets */; };
+		5D16E4232924B375003C217F /* ServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16E4222924B375003C217F /* ServerConfig.swift */; };
+		5D16E4262924B646003C217F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5D16E4252924B646003C217F /* Alamofire */; };
+		5D16E4292924B684003C217F /* CodableWrappers in Frameworks */ = {isa = PBXBuildFile; productRef = 5D16E4282924B684003C217F /* CodableWrappers */; };
+		5D16E42C2924B6A0003C217F /* HTTPRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16E42B2924B6A0003C217F /* HTTPRequestProtocol.swift */; };
+		5D16E42E2924C0A0003C217F /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16E42D2924C0A0003C217F /* HTTPClient.swift */; };
+		5D16E4322924C676003C217F /* HTTPRequestList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16E4312924C676003C217F /* HTTPRequestList.swift */; };
+		5D16E4362924C785003C217F /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16E4352924C785003C217F /* TodoListView.swift */; };
+		5D16E4392924C796003C217F /* TodoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16E4382924C796003C217F /* TodoListViewModel.swift */; };
+		5D16E43D2924C831003C217F /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16E43C2924C831003C217F /* Todo.swift */; };
+		5D16E4402924CA98003C217F /* SwiftUI+async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16E43F2924CA98003C217F /* SwiftUI+async.swift */; };
+		5D16E4422924CEAB003C217F /* NetworkAlertOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16E4412924CEAB003C217F /* NetworkAlertOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +30,15 @@
 		5D16E4152924B11B003C217F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5D16E4172924B11F003C217F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D16E41A2924B11F003C217F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5D16E4222924B375003C217F /* ServerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfig.swift; sourceTree = "<group>"; };
+		5D16E42B2924B6A0003C217F /* HTTPRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestProtocol.swift; sourceTree = "<group>"; };
+		5D16E42D2924C0A0003C217F /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		5D16E4312924C676003C217F /* HTTPRequestList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestList.swift; sourceTree = "<group>"; };
+		5D16E4352924C785003C217F /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
+		5D16E4382924C796003C217F /* TodoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewModel.swift; sourceTree = "<group>"; };
+		5D16E43C2924C831003C217F /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		5D16E43F2924CA98003C217F /* SwiftUI+async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+async.swift"; sourceTree = "<group>"; };
+		5D16E4412924CEAB003C217F /* NetworkAlertOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAlertOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +46,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D16E4262924B646003C217F /* Alamofire in Frameworks */,
+				5D16E4292924B684003C217F /* CodableWrappers in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,10 +73,12 @@
 		5D16E4122924B11B003C217F /* LeageAPI */ = {
 			isa = PBXGroup;
 			children = (
-				5D16E4132924B11B003C217F /* LeageAPIApp.swift */,
-				5D16E4152924B11B003C217F /* ContentView.swift */,
-				5D16E4172924B11F003C217F /* Assets.xcassets */,
-				5D16E4192924B11F003C217F /* Preview Content */,
+				5D16E43A2924C7DB003C217F /* App */,
+				5D16E4342924C77C003C217F /* Views */,
+				5D16E4372924C78C003C217F /* ViewModels */,
+				5D16E43E2924CA87003C217F /* Extensions */,
+				5D16E42A2924B68C003C217F /* Service */,
+				5D16E4212924B1C6003C217F /* Resources */,
 			);
 			path = LeageAPI;
 			sourceTree = "<group>";
@@ -65,6 +89,77 @@
 				5D16E41A2924B11F003C217F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5D16E4212924B1C6003C217F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5D16E4172924B11F003C217F /* Assets.xcassets */,
+				5D16E4192924B11F003C217F /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5D16E42A2924B68C003C217F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5D16E42B2924B6A0003C217F /* HTTPRequestProtocol.swift */,
+				5D16E42D2924C0A0003C217F /* HTTPClient.swift */,
+				5D16E4332924C68F003C217F /* RequestList */,
+				5D16E43B2924C825003C217F /* Model */,
+				5D16E4412924CEAB003C217F /* NetworkAlertOperation.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		5D16E4332924C68F003C217F /* RequestList */ = {
+			isa = PBXGroup;
+			children = (
+				5D16E4312924C676003C217F /* HTTPRequestList.swift */,
+			);
+			path = RequestList;
+			sourceTree = "<group>";
+		};
+		5D16E4342924C77C003C217F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5D16E4352924C785003C217F /* TodoListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5D16E4372924C78C003C217F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5D16E4382924C796003C217F /* TodoListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5D16E43A2924C7DB003C217F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5D16E4132924B11B003C217F /* LeageAPIApp.swift */,
+				5D16E4222924B375003C217F /* ServerConfig.swift */,
+				5D16E4152924B11B003C217F /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5D16E43B2924C825003C217F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D16E43C2924C831003C217F /* Todo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5D16E43E2924CA87003C217F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5D16E43F2924CA98003C217F /* SwiftUI+async.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +178,10 @@
 			dependencies = (
 			);
 			name = LeageAPI;
+			packageProductDependencies = (
+				5D16E4252924B646003C217F /* Alamofire */,
+				5D16E4282924B684003C217F /* CodableWrappers */,
+			);
 			productName = LeageAPI;
 			productReference = 5D16E4102924B11B003C217F /* LeageAPI.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +210,10 @@
 				Base,
 			);
 			mainGroup = 5D16E4072924B11B003C217F;
+			packageReferences = (
+				5D16E4242924B646003C217F /* XCRemoteSwiftPackageReference "Alamofire" */,
+				5D16E4272924B684003C217F /* XCRemoteSwiftPackageReference "CodableWrappers" */,
+			);
 			productRefGroup = 5D16E4112924B11B003C217F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +240,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D16E4392924C796003C217F /* TodoListViewModel.swift in Sources */,
+				5D16E42C2924B6A0003C217F /* HTTPRequestProtocol.swift in Sources */,
+				5D16E42E2924C0A0003C217F /* HTTPClient.swift in Sources */,
 				5D16E4162924B11B003C217F /* ContentView.swift in Sources */,
+				5D16E43D2924C831003C217F /* Todo.swift in Sources */,
+				5D16E4322924C676003C217F /* HTTPRequestList.swift in Sources */,
+				5D16E4402924CA98003C217F /* SwiftUI+async.swift in Sources */,
+				5D16E4362924C785003C217F /* TodoListView.swift in Sources */,
 				5D16E4142924B11B003C217F /* LeageAPIApp.swift in Sources */,
+				5D16E4232924B375003C217F /* ServerConfig.swift in Sources */,
+				5D16E4422924CEAB003C217F /* NetworkAlertOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,7 +307,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -249,7 +361,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -266,7 +378,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"LeageAPI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"LeageAPI/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = Y3SM86Y3Q4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -275,6 +387,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -295,7 +408,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"LeageAPI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"LeageAPI/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = Y3SM86Y3Q4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -304,6 +417,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,6 +453,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5D16E4242924B646003C217F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		5D16E4272924B684003C217F /* XCRemoteSwiftPackageReference "CodableWrappers" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/GottaGetSwifty/CodableWrappers";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5D16E4252924B646003C217F /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D16E4242924B646003C217F /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		5D16E4282924B684003C217F /* CodableWrappers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D16E4272924B684003C217F /* XCRemoteSwiftPackageReference "CodableWrappers" */;
+			productName = CodableWrappers;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5D16E4082924B11B003C217F /* Project object */;
 }
