@@ -21,7 +21,7 @@ extension TodoListViewModel {
     func requestTodos() async throws {
         do {
             todoList = try await getTodos()
-            print("todolsit : \(todoList)")
+            print("todolsit : \(todoList.count)")
         } catch AFError.explicitlyCancelled {
             
         }

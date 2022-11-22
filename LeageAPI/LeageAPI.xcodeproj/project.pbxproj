@@ -22,6 +22,8 @@
 		5D16E43D2924C831003C217F /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16E43C2924C831003C217F /* Todo.swift */; };
 		5D16E4402924CA98003C217F /* SwiftUI+async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16E43F2924CA98003C217F /* SwiftUI+async.swift */; };
 		5D16E4422924CEAB003C217F /* NetworkAlertOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16E4412924CEAB003C217F /* NetworkAlertOperation.swift */; };
+		5D16E44D292B5B9B003C217F /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 5D16E44C292B5B9B003C217F /* PopupView */; };
+		5D16E451292B5BD2003C217F /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16E450292B5BD2003C217F /* Color+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,7 @@
 		5D16E43C2924C831003C217F /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		5D16E43F2924CA98003C217F /* SwiftUI+async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+async.swift"; sourceTree = "<group>"; };
 		5D16E4412924CEAB003C217F /* NetworkAlertOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAlertOperation.swift; sourceTree = "<group>"; };
+		5D16E450292B5BD2003C217F /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D16E44D292B5B9B003C217F /* PopupView in Frameworks */,
 				5D16E4262924B646003C217F /* Alamofire in Frameworks */,
 				5D16E4292924B684003C217F /* CodableWrappers in Frameworks */,
 			);
@@ -158,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				5D16E43F2924CA98003C217F /* SwiftUI+async.swift */,
+				5D16E450292B5BD2003C217F /* Color+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 			packageProductDependencies = (
 				5D16E4252924B646003C217F /* Alamofire */,
 				5D16E4282924B684003C217F /* CodableWrappers */,
+				5D16E44C292B5B9B003C217F /* PopupView */,
 			);
 			productName = LeageAPI;
 			productReference = 5D16E4102924B11B003C217F /* LeageAPI.app */;
@@ -213,6 +219,7 @@
 			packageReferences = (
 				5D16E4242924B646003C217F /* XCRemoteSwiftPackageReference "Alamofire" */,
 				5D16E4272924B684003C217F /* XCRemoteSwiftPackageReference "CodableWrappers" */,
+				5D16E44B292B5B9B003C217F /* XCRemoteSwiftPackageReference "PopupView" */,
 			);
 			productRefGroup = 5D16E4112924B11B003C217F /* Products */;
 			projectDirPath = "";
@@ -251,6 +258,7 @@
 				5D16E4142924B11B003C217F /* LeageAPIApp.swift in Sources */,
 				5D16E4232924B375003C217F /* ServerConfig.swift in Sources */,
 				5D16E4422924CEAB003C217F /* NetworkAlertOperation.swift in Sources */,
+				5D16E451292B5BD2003C217F /* Color+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +479,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		5D16E44B292B5B9B003C217F /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -483,6 +499,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5D16E4272924B684003C217F /* XCRemoteSwiftPackageReference "CodableWrappers" */;
 			productName = CodableWrappers;
+		};
+		5D16E44C292B5B9B003C217F /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D16E44B292B5B9B003C217F /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

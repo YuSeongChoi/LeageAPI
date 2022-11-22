@@ -75,30 +75,3 @@ extension DataRequestFormProtocol where Self: Encodable {
     }
     
 }
-
-//struct ValidationError: Error {
-//    var message: String?
-//
-//    static var successValidation: DataRequest.Validation {
-//        { _, _, data in
-//           guard let data = data,
-//                 let dictionary = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
-//                 let success = dictionary["success"] as? Bool
-//            else { return .success(()) }
-//            if success {
-//                return .success(())
-//            } else {
-//                return .failure(ValidationError())
-//            }
-//        }
-//    }
-//
-//}
-//extension ValidationError: LocalizedError {
-//    var errorDescription: String? {
-//        guard let msg = message, !msg.isEmpty else {
-//            return "서버에 응답이 없습니다."
-//        }
-//        return msg
-//    }
-//}
