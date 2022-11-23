@@ -15,5 +15,3 @@ struct LeageAPIApp: App {
         }
     }
 }
-
-//RGAPI-36d766b0-ea7c-4344-adfe-945a667a1772

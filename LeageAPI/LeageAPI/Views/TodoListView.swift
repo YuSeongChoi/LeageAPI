@@ -17,7 +17,8 @@ struct TodoListView: View {
         }
         .async {
             do {
-                try await viewModel.requestTodos()
+//                try await viewModel.requestTodos()
+                try await viewModel.requestSummonerInfo(name: "iOS KING")
             } catch {
                 await MainActor.run {
                     NetworkAlert.dismissNetworkAlert()

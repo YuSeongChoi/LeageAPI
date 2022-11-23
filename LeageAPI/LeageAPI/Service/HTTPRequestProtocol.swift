@@ -8,6 +8,12 @@
 import Foundation
 import Alamofire
 
+class API {
+
+    static let key = "YOUR_KEY"
+    
+}
+
 protocol RequestFormProtocol: URLRequestConvertible {
     
     var base: String { get }

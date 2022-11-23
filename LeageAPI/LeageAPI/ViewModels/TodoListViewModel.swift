@@ -27,6 +27,14 @@ extension TodoListViewModel {
         }
     }
     
+    func requestSummonerInfo(name: String) async throws {
+        do {
+            try await getSummonerInfo(name: name)
+        } catch AFError.explicitlyCancelled {
+            
+        }
+    }
+    
 }
 
 // MARK: - APIs
@@ -36,6 +44,13 @@ extension TodoListViewModel {
         return try await HTTPRequestList.TodoRequest()
             .buildDataRequest()
             .serializingDecodable([Todo].self, automaticallyCancelling: true)
+            .result.mapError{ $0.underlyingError ?? $0 }.get()
+    }
+    
+    private func getSummonerInfo(name: String) async throws {
+        try await HTTPRequestList.UserDataRequest(summonerName: name)
+            .buildDataRequest()
+            .serializingData(automaticallyCancelling: true)
             .result.mapError{ $0.underlyingError ?? $0 }.get()
     }
     
