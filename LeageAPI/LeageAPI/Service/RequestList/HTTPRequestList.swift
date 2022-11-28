@@ -24,8 +24,6 @@ extension HTTPRequestList {
         var validation: DataRequest.Validation? { nil }
         var summonerName: String
         func asURLRequest() throws -> URLRequest {
-            print("name : \(summonerName)")
-            print("path : \(path)")
             return try encoder.encode(["api_key": API.key], into: baseRequest)
         }
     }

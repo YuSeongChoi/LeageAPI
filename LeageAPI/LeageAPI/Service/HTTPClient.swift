@@ -22,7 +22,7 @@ extension Session {
     static let HTTPclient: Session = .newInstance
 }
 
-class APIEventLogger: EventMonitor {
+struct APIEventLogger: EventMonitor {
     
     let queue = DispatchQueue(label: "NetworkLogger")
     
