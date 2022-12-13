@@ -31,13 +31,6 @@ struct HomeMainView: View {
                     Label("설정", systemImage: "gearshape")
                 }
         }
-        .accentColor(.purple)
     }
     
-}
-
-struct HomeMainView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeMainView()
-    }
 }

@@ -10,7 +10,6 @@ import Foundation
 enum Constants {
     
     enum HomeTabItem: String, Hashable {
-        
         case Home
         case Champion
         case Setting
@@ -25,7 +24,6 @@ enum Constants {
                 return "설정"
             }
         }
-        
     }
     
 }
