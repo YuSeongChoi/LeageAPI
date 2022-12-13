@@ -10,8 +10,8 @@ import NetworkExtension
 
 let ServerConstant: ServerConfiguration = {
     let config: ServerConfiguration
-    config = .Test
-//    config = .League
+//    config = .Test
+    config = .League
     return config
 }()
 

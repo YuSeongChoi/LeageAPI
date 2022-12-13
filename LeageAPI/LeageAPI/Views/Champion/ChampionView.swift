@@ -1,0 +1,20 @@
+//
+//  ChampionView.swift
+//  LeageAPI
+//
+//  Created by YuSeongChoi on 2022/12/13.
+//
+
+import SwiftUI
+
+struct ChampionView: View {
+    var body: some View {
+        Text("Champion")
+    }
+}
+
+struct ChampionView_Previews: PreviewProvider {
+    static var previews: some View {
+        ChampionView()
+    }
+}

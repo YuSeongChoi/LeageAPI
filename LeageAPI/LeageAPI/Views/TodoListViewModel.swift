@@ -66,7 +66,6 @@ extension TodoListViewModel {
             } receiveValue: { [unowned self] posts in
                 print(posts)
             }.store(in: &cancelBag)
-            
     }
     
 }
@@ -85,7 +84,6 @@ extension TodoListViewModel {
     private func getSummonerInfo(name: String) async throws -> SummonerInfo {
         try await HTTPRequestList.UserDataRequest(summonerName: name)
             .buildDataRequest()
-//            .serializingData(automaticallyCancelling: true)
             .serializingDecodable(SummonerInfo.self, automaticallyCancelling: true)
             .result.mapError{ $0.underlyingError ?? $0 }.get()
     }
