@@ -11,7 +11,6 @@ import Alamofire
 class API {
 
 //    static let key = "YOUR_KEY"
-    static let key = "RGAPI-5daf2f72-1636-4372-b26a-a37d3f536d4a"
     
 }
 
@@ -82,3 +81,5 @@ extension DataRequestFormProtocol where Self: Encodable {
     }
     
 }
+
+

@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import os
 
 extension Session {
     static var newInstance: Session {
@@ -33,17 +34,18 @@ struct APIEventLogger: EventMonitor {
                       + "Method: " + (request.request?.httpMethod ?? "") + "\n"
                       + "Headers: " + "\(request.request?.allHTTPHeaderFields ?? [:])")
                 print("----------------------------------------------------\n2️⃣ Body")
-        if let body = request.request?.httpBody?.toPrettyPrintedString {
-            print("Body: \(body)")
+
+        if let body = request.request?.httpBody, !body.isEmpty {
+            print("Body: \(String(decoding: body, as: UTF8.self))")
         } else { print("보낸 Body가 없습니다.")}
         print("----------------------------------------------------\n")
     }
-    
-    // response가 오면 호출, response의 결과에 따라 통신 결과를 요약해서 확인할 수 있다.
+
+//     response가 오면 호출, response의 결과에 따라 통신 결과를 요약해서 확인할 수 있다.
     func request<Value>(_ request: DataRequest, didParseResponse response: DataResponse<Value, AFError>) {
         print("              🛰 NETWORK Response LOG")
         print("\n----------------------------------------------------")
-        
+
         switch response.result {
         case .success(_):
             print("3️⃣ 서버 연결 성공")
@@ -51,9 +53,9 @@ struct APIEventLogger: EventMonitor {
             print("3️⃣ 서버 연결 실패")
             print("올바른 URL인지 확인해보세요.")
         }
-        
+
         print("Result: " + "\(response.result)" + "\n" + "StatusCode: " + "\(response.response?.statusCode ?? 0)")
-        
+
         if let statusCode = response.response?.statusCode {
             switch statusCode {
             case 400..<500:
@@ -64,7 +66,7 @@ struct APIEventLogger: EventMonitor {
                 break
             }
         }
-        
+
         print("----------------------------------------------------")
         print("4️⃣ Data 확인하기")
         if let response = response.data?.toPrettyPrintedString {
@@ -97,3 +99,4 @@ extension Data {
         return prettyPrintedString as String
     }
 }
+
