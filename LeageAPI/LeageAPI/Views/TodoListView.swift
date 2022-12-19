@@ -29,23 +29,6 @@ struct TodoListView: View {
             }
             
         }
-        .async {
-            do {
-                try await viewModel.requestSummonerInfo(name: "iOS KING")
-                try await viewModel.getChampionImage(name: "Ezreal")
-//                try await viewModel.getItemList()
-            } catch {
-                await MainActor.run {
-                    NetworkAlert.dismissNetworkAlert()
-                }
-            }
-        }
-    }
-}
-
-struct TodoListView_Previews: PreviewProvider {
-    static var previews: some View {
-        TodoListView()
     }
 }
 
