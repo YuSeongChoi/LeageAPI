@@ -14,6 +14,7 @@ import Alamofire
 final class HomeViewModel: ObservableObject, Identifiable {
     
     @Published var summonerInfo: SummonerInfo = SummonerInfo()
+    @Published var summonerID: String = ""
     private var cancelBag = Set<AnyCancellable>()
     
 }
@@ -33,16 +34,21 @@ extension HomeViewModel {
     
     func requestSummonerInfo2(name: String) {
         Task {
-            let result = await HTTPRequestList.UserDataRequest(summonerName: name)
-                .buildDataRequest()
-                .serializingDecodable(SummonerInfo.self, automaticallyCancelling: true)
-//                .serializingData(automaticallyCancelling: true)
-                .result
-            switch result {
-            case .failure(let error):
-                print("ERROR! : \(error.localizedDescription)")
-            case .success(let value):
-                print("VALUE : \(value)")
+            do {
+                let result = await HTTPRequestList.UserDataRequest(summonerName: name)
+                    .buildDataRequest()
+                    .serializingDecodable(SummonerInfo.self, automaticallyCancelling: true)
+    //                .serializingData(automaticallyCancelling: true)
+                    .result
+                switch result {
+                case .success(let value):
+                    print("VALUE : \(value)")
+                case .failure(let error):
+                    print("ERROR! : \(error.localizedDescription)")
+                    throw error.underlyingError ?? error
+                }
+            } catch AFError.explicitlyCancelled {
+                
             }
         }
     }
@@ -57,6 +63,7 @@ extension HomeViewModel {
                 
             } receiveValue: { [unowned self] value in
                 print("VALUE : \(value)")
+                summonerID = value.id
             }.store(in: &cancelBag)
     }
     
