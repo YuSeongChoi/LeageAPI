@@ -17,8 +17,6 @@
 		5D16E42C2924B6A0003C217F /* HTTPRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16E42B2924B6A0003C217F /* HTTPRequestProtocol.swift */; };
 		5D16E42E2924C0A0003C217F /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16E42D2924C0A0003C217F /* HTTPClient.swift */; };
 		5D16E4322924C676003C217F /* HTTPRequestList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16E4312924C676003C217F /* HTTPRequestList.swift */; };
-		5D16E4362924C785003C217F /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16E4352924C785003C217F /* TodoListView.swift */; };
-		5D16E4392924C796003C217F /* TodoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16E4382924C796003C217F /* TodoListViewModel.swift */; };
 		5D16E43D2924C831003C217F /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16E43C2924C831003C217F /* Todo.swift */; };
 		5D16E4402924CA98003C217F /* SwiftUI+async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16E43F2924CA98003C217F /* SwiftUI+async.swift */; };
 		5D16E4422924CEAB003C217F /* NetworkAlertOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16E4412924CEAB003C217F /* NetworkAlertOperation.swift */; };
@@ -46,8 +44,6 @@
 		5D16E42B2924B6A0003C217F /* HTTPRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestProtocol.swift; sourceTree = "<group>"; };
 		5D16E42D2924C0A0003C217F /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		5D16E4312924C676003C217F /* HTTPRequestList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestList.swift; sourceTree = "<group>"; };
-		5D16E4352924C785003C217F /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
-		5D16E4382924C796003C217F /* TodoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewModel.swift; sourceTree = "<group>"; };
 		5D16E43C2924C831003C217F /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		5D16E43F2924CA98003C217F /* SwiftUI+async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+async.swift"; sourceTree = "<group>"; };
 		5D16E4412924CEAB003C217F /* NetworkAlertOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAlertOperation.swift; sourceTree = "<group>"; };
@@ -148,8 +144,6 @@
 		5D16E4342924C77C003C217F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5D16E4352924C785003C217F /* TodoListView.swift */,
-				5D16E4382924C796003C217F /* TodoListViewModel.swift */,
 				5D2D4CA429481C1B00EA0948 /* HomeMainView.swift */,
 				5D2D4CAB29481E2900EA0948 /* Home */,
 				5D2D4CAA29481E2200EA0948 /* Champion */,
@@ -309,7 +303,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D16E4392924C796003C217F /* TodoListViewModel.swift in Sources */,
 				5D2D4CA32947226600EA0948 /* SummonerInfo.swift in Sources */,
 				5D16E42C2924B6A0003C217F /* HTTPRequestProtocol.swift in Sources */,
 				5D2D4CB32948593C00EA0948 /* HomeViewModel.swift in Sources */,
@@ -323,7 +316,6 @@
 				5D16E4322924C676003C217F /* HTTPRequestList.swift in Sources */,
 				5D2D4CAD29481E3200EA0948 /* SettingView.swift in Sources */,
 				5D16E4402924CA98003C217F /* SwiftUI+async.swift in Sources */,
-				5D16E4362924C785003C217F /* TodoListView.swift in Sources */,
 				5D16E4142924B11B003C217F /* LeageAPIApp.swift in Sources */,
 				5DD1236929347F8C006B78B2 /* SwiftUIEnvironment.swift in Sources */,
 				5D16E4232924B375003C217F /* ServerConfig.swift in Sources */,

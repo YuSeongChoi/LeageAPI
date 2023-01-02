@@ -9,16 +9,16 @@ import SwiftUI
 
 struct HomeView: View {
     
-    
+    @StateObject private var viewModel = HomeViewModel()
     
     var body: some View {
-        Text("Home")
+        VStack {
+            Text("Home")
+        }
+        .onAppear {
+//            viewModel.requestSummonerInfo2(name: "iOS KING")
+            viewModel.requestSummoerInfo3(name: "iOS KING")
+        }
     }
     
-}
-
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
 }

@@ -10,8 +10,8 @@ import Alamofire
 
 class API {
 
-    static let key = "YOUR_KEY"
-
+//    static let key = "YOUR_KEY"
+    static let key = "RGAPI-b62f69c9-208e-4e8b-8c82-2e7b4346d80e"
     
 }
 

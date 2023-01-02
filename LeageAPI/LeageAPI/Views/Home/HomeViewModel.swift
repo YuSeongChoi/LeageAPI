@@ -6,16 +6,20 @@
 //
 
 import Foundation
+import Combine
+
 import Alamofire
 
 @MainActor
 final class HomeViewModel: ObservableObject, Identifiable {
     
     @Published var summonerInfo: SummonerInfo = SummonerInfo()
+    private var cancelBag = Set<AnyCancellable>()
     
 }
 
 // MARK: - Request API
+
 extension HomeViewModel {
     
     func requestSummonerInfo(name: String) async throws {
@@ -31,7 +35,8 @@ extension HomeViewModel {
         Task {
             let result = await HTTPRequestList.UserDataRequest(summonerName: name)
                 .buildDataRequest()
-                .serializingData(automaticallyCancelling: true)
+                .serializingDecodable(SummonerInfo.self, automaticallyCancelling: true)
+//                .serializingData(automaticallyCancelling: true)
                 .result
             switch result {
             case .failure(let error):
@@ -42,9 +47,23 @@ extension HomeViewModel {
         }
     }
     
+    func requestSummoerInfo3(name: String) {
+        HTTPRequestList.UserDataRequest(summonerName: name)
+            .buildDataRequest()
+            .publishDecodable(type: SummonerInfo.self, queue: .global())
+            .value()
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+                
+            } receiveValue: { [unowned self] value in
+                print("VALUE : \(value)")
+            }.store(in: &cancelBag)
+    }
+    
 }
 
 // MARK: - APIs
+
 extension HomeViewModel {
     
     private func getSummonerInfo(name: String) async throws -> SummonerInfo {
