@@ -59,7 +59,7 @@ extension HomeViewModel {
             .publishDecodable(type: SummonerInfo.self, queue: .global())
             .value()
             .receive(on: DispatchQueue.main)
-            .sink { completion in
+            .sink { _ in
                 
             } receiveValue: { [unowned self] value in
                 print("VALUE : \(value)")

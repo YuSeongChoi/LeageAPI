@@ -14,10 +14,11 @@ struct HomeView: View {
     var body: some View {
         VStack {
             Text("Home")
+            Text(viewModel.summonerID)
         }
         .onAppear {
 //            viewModel.requestSummonerInfo2(name: "iOS KING")
-            viewModel.requestSummoerInfo3(name: "iOS KING")
+            viewModel.requestSummoerInfo3(name: "Hide on Bush")
         }
     }
     
