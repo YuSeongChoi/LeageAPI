@@ -17,6 +17,13 @@ final class HomeViewModel: ObservableObject, Identifiable {
     @Published var summonerID: String = ""
     private var cancelBag = Set<AnyCancellable>()
     
+    var userInfo: UserInfo = {
+        var userInfo = UserInfo()
+        userInfo.userName = "DS Khan"
+        userInfo.age = 32
+        return userInfo
+    }()
+    
 }
 
 // MARK: - Request API
@@ -92,6 +99,64 @@ extension HomeViewModel {
             .buildDataRequest()
             .serializingData(automaticallyCancelling: true)
             .result.mapError{ $0.underlyingError ?? $0 }.get()
+    }
+    
+}
+
+extension HomeViewModel {
+    
+    func basicRequest() {
+        let params: Parameters = ["userName": "DS Khan", "age" : 20]
+        
+        AF.request("https://httpbin.org/post", method: .post, parameters: params)
+            .responseDecodable(of: HttpbinResponse.self) { (response: DataResponse<HttpbinResponse, AFError>) -> Void in
+                switch response.result {
+                case .success(let value):
+                    print("[RESPONSE]")
+                    print(response.data?.toPrettyPrintedString)
+                case .failure(let error):
+                    print("API Failure")
+                    print(error)
+                }
+            }
+    }
+    
+    func getRequestByRouter() {
+        let router = APIRouter(path: APIPath.getPractice, httpMethod: .get, parameters: userInfo.toData, apiType: .service)
+        AF.request(router).responseDecodable(of: HttpbinResponse.self) { (response: DataResponse<HttpbinResponse, AFError>) -> Void in
+            switch response.result {
+            case .success(let value):
+                print("[RESPONSE]")
+                print("URL : \(value.url ?? "")")
+                print("Response Data: \(response.data?.toPrettyPrintedString ?? "")")
+            case .failure(let error):
+                print("API Failure")
+                print(error)
+            }
+        }
+    }
+    
+    func postRequestByRouter() {
+        let router = APIRouter(path: APIPath.postPractice, httpMethod: .post, parameters: userInfo.toData, apiType: .service)
+        AF.request(router).responseDecodable(of: HttpbinResponse.self) { response in
+            switch response.result {
+            case .success(let value):
+                print("[RESPONSE]")
+                print("URL : \(value.url ?? "")")
+                print("json body: \(value.json ?? UserInfo())")
+                print("Response Data : \(response.data?.toPrettyPrintedString ?? "")")
+            case .failure(let error):
+                print("API Failure")
+                print(error)
+            }
+        }
+    }
+    
+    func requestUsingSession() {
+        let router = APIRouter(path: APIPath.postPractice, httpMethod: .post, parameters: userInfo.toData, apiType: .service)
+        APIManager.shared.session.request(router).responseDecodable(of: HttpbinResponse.self) { response in
+            print("LCK response : \(response.data?.toPrettyPrintedString)")
+        }
     }
     
 }

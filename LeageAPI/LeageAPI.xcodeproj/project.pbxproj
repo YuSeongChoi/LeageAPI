@@ -37,6 +37,9 @@
 		5DA4C71F2964211A009962E3 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA4C71E2964211A009962E3 /* Storage.swift */; };
 		5DA4C72129642205009962E3 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA4C72029642204009962E3 /* Extension.swift */; };
 		5DA4C723296423C7009962E3 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA4C722296423C7009962E3 /* APIRouter.swift */; };
+		5DA4C72529651428009962E3 /* APIPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA4C72429651428009962E3 /* APIPath.swift */; };
+		5DA4C727296514EB009962E3 /* APIEventLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA4C726296514EB009962E3 /* APIEventLogger.swift */; };
+		5DA4C72929653C79009962E3 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA4C72829653C79009962E3 /* APIManager.swift */; };
 		5DD1236929347F8C006B78B2 /* SwiftUIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1236829347F8C006B78B2 /* SwiftUIEnvironment.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +72,9 @@
 		5DA4C71E2964211A009962E3 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		5DA4C72029642204009962E3 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		5DA4C722296423C7009962E3 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		5DA4C72429651428009962E3 /* APIPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPath.swift; sourceTree = "<group>"; };
+		5DA4C726296514EB009962E3 /* APIEventLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEventLogger.swift; sourceTree = "<group>"; };
+		5DA4C72829653C79009962E3 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		5DD1236829347F8C006B78B2 /* SwiftUIEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIEnvironment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -242,8 +248,11 @@
 		5DA4C71829642048009962E3 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				5DA4C716296411AC009962E3 /* AuthInterceptor.swift */,
 				5DA4C722296423C7009962E3 /* APIRouter.swift */,
+				5DA4C72429651428009962E3 /* APIPath.swift */,
+				5DA4C72829653C79009962E3 /* APIManager.swift */,
+				5DA4C716296411AC009962E3 /* AuthInterceptor.swift */,
+				5DA4C726296514EB009962E3 /* APIEventLogger.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -349,6 +358,8 @@
 				5D16E42C2924B6A0003C217F /* HTTPRequestProtocol.swift in Sources */,
 				5D2D4CB32948593C00EA0948 /* HomeViewModel.swift in Sources */,
 				5D2D4CAF29481E3900EA0948 /* ChampionView.swift in Sources */,
+				5DA4C72529651428009962E3 /* APIPath.swift in Sources */,
+				5DA4C72929653C79009962E3 /* APIManager.swift in Sources */,
 				5D2D4CA529481C1B00EA0948 /* HomeMainView.swift in Sources */,
 				5DA4C71F2964211A009962E3 /* Storage.swift in Sources */,
 				5D16E42E2924C0A0003C217F /* HTTPClient.swift in Sources */,
@@ -359,6 +370,7 @@
 				5D2D4CA829481D1200EA0948 /* Constants.swift in Sources */,
 				5D16E4322924C676003C217F /* HTTPRequestList.swift in Sources */,
 				5D2D4CAD29481E3200EA0948 /* SettingView.swift in Sources */,
+				5DA4C727296514EB009962E3 /* APIEventLogger.swift in Sources */,
 				5D16E4402924CA98003C217F /* SwiftUI+async.swift in Sources */,
 				5D16E4142924B11B003C217F /* LeageAPIApp.swift in Sources */,
 				5DD1236929347F8C006B78B2 /* SwiftUIEnvironment.swift in Sources */,
