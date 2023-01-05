@@ -45,7 +45,7 @@ extension HomeViewModel {
                 let result = await HTTPRequestList.UserDataRequest(summonerName: name)
                     .buildDataRequest()
                     .serializingDecodable(SummonerInfo.self, automaticallyCancelling: true)
-    //                .serializingData(automaticallyCancelling: true)
+    //                .serializingData(automaticallyCancelling: true) 디코딩 안하고 반환
                     .result
                 switch result {
                 case .success(let value):
