@@ -16,6 +16,9 @@ struct HomeView: View {
 //            Text("Home")
 //            Text(viewModel.summonerID)
             DottedLine()
+                .stroke(style: StrokeStyle(lineWidth: 1, dash: [3]))
+                .frame(height: 1)
+                .foregroundColor(.gray)
         }
         .onAppear {
 //            viewModel.requestSummonerInfo2(name: "iOS KING")
