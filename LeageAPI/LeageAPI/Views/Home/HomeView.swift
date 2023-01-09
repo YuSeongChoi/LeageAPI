@@ -13,8 +13,9 @@ struct HomeView: View {
     
     var body: some View {
         VStack {
-            Text("Home")
-            Text(viewModel.summonerID)
+//            Text("Home")
+//            Text(viewModel.summonerID)
+            DottedLine()
         }
         .onAppear {
 //            viewModel.requestSummonerInfo2(name: "iOS KING")
