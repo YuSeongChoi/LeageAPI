@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D1291ED29A34B810003537F /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 5D1291EC29A34B810003537F /* RswiftLibrary */; };
+		5D1291F229A34C7D0003537F /* SwiftUI+Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1291F129A34C7D0003537F /* SwiftUI+Resources.swift */; };
 		5D16E4142924B11B003C217F /* LeageAPIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16E4132924B11B003C217F /* LeageAPIApp.swift */; };
 		5D16E4162924B11B003C217F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16E4152924B11B003C217F /* ContentView.swift */; };
 		5D16E4182924B11F003C217F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D16E4172924B11F003C217F /* Assets.xcassets */; };
@@ -45,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D1291F129A34C7D0003537F /* SwiftUI+Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+Resources.swift"; sourceTree = "<group>"; };
 		5D16E4102924B11B003C217F /* LeageAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeageAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D16E4132924B11B003C217F /* LeageAPIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeageAPIApp.swift; sourceTree = "<group>"; };
 		5D16E4152924B11B003C217F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,6 +89,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D16E44D292B5B9B003C217F /* PopupView in Frameworks */,
+				5D1291ED29A34B810003537F /* RswiftLibrary in Frameworks */,
 				5D16E4262924B646003C217F /* Alamofire in Frameworks */,
 				5D16E4292924B684003C217F /* CodableWrappers in Frameworks */,
 			);
@@ -196,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				5D16E43F2924CA98003C217F /* SwiftUI+async.swift */,
+				5D1291F129A34C7D0003537F /* SwiftUI+Resources.swift */,
 				5D16E450292B5BD2003C217F /* Color+Extension.swift */,
 			);
 			path = Extensions;
@@ -291,12 +296,14 @@
 			buildRules = (
 			);
 			dependencies = (
+				5D1291EF29A34BB30003537F /* PBXTargetDependency */,
 			);
 			name = LeageAPI;
 			packageProductDependencies = (
 				5D16E4252924B646003C217F /* Alamofire */,
 				5D16E4282924B684003C217F /* CodableWrappers */,
 				5D16E44C292B5B9B003C217F /* PopupView */,
+				5D1291EC29A34B810003537F /* RswiftLibrary */,
 			);
 			productName = LeageAPI;
 			productReference = 5D16E4102924B11B003C217F /* LeageAPI.app */;
@@ -330,6 +337,7 @@
 				5D16E4242924B646003C217F /* XCRemoteSwiftPackageReference "Alamofire" */,
 				5D16E4272924B684003C217F /* XCRemoteSwiftPackageReference "CodableWrappers" */,
 				5D16E44B292B5B9B003C217F /* XCRemoteSwiftPackageReference "PopupView" */,
+				5D1291EB29A34B800003537F /* XCRemoteSwiftPackageReference "R" */,
 			);
 			productRefGroup = 5D16E4112924B11B003C217F /* Products */;
 			projectDirPath = "";
@@ -378,6 +386,7 @@
 				5D16E4142924B11B003C217F /* LeageAPIApp.swift in Sources */,
 				5DD1236929347F8C006B78B2 /* SwiftUIEnvironment.swift in Sources */,
 				5DA4C717296411AC009962E3 /* AuthInterceptor.swift in Sources */,
+				5D1291F229A34C7D0003537F /* SwiftUI+Resources.swift in Sources */,
 				5D3817E7296C08EC00E21053 /* DottedLine.swift in Sources */,
 				5D16E4232924B375003C217F /* ServerConfig.swift in Sources */,
 				5DA4C71D296420DF009962E3 /* HttpbinResponse.swift in Sources */,
@@ -391,6 +400,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5D1291EF29A34BB30003537F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 5D1291EE29A34BB30003537F /* RswiftGenerateInternalResources */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5D16E41C2924B11F003C217F /* Debug */ = {
@@ -591,6 +607,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5D1291EB29A34B800003537F /* XCRemoteSwiftPackageReference "R" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		5D16E4242924B646003C217F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -618,6 +642,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5D1291EC29A34B810003537F /* RswiftLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D1291EB29A34B800003537F /* XCRemoteSwiftPackageReference "R" */;
+			productName = RswiftLibrary;
+		};
+		5D1291EE29A34BB30003537F /* RswiftGenerateInternalResources */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "plugin:RswiftGenerateInternalResources";
+		};
 		5D16E4252924B646003C217F /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5D16E4242924B646003C217F /* XCRemoteSwiftPackageReference "Alamofire" */;

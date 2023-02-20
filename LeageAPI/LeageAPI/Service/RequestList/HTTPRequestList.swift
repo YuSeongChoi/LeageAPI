@@ -12,20 +12,6 @@ enum HTTPRequestList {}
 
 extension HTTPRequestList {
     
-    struct TodoRequest: DataRequestFormProtocol, Encodable {
-        var path: String { "/todos" }
-        var method: HTTPMethod { .get }
-        var validation: DataRequest.Validation? { nil }
-    }
-    
-    struct TodoPosts: DataRequestFormProtocol, Encodable {
-        var path: String { "/posts" }
-        var method: HTTPMethod { .post }
-        var userId: Int
-        var id: Int
-        var validation: DataRequest.Validation? { nil }
-    }
-    
     struct UserDataRequest: DataRequestFormProtocol, Encodable {
         var path: String { "/lol/summoner/v4/summoners/by-name/\(summonerName)" }
         var method: HTTPMethod { .get }
