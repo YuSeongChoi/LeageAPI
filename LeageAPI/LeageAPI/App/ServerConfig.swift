@@ -24,14 +24,14 @@ extension ServerConfiguration {
     static var Test: Self {
         .init(
             baseURL: "https://jsonplaceholder.typicode.com",
-            ddragonURL: "https://ddragon.leagueoflegends.com/cdn/12.23.1"
+            ddragonURL: "https://ddragon.leagueoflegends.com/cdn/13.3.1"
         )
     }
     
     static var League: Self {
         .init(
             baseURL: "https://kr.api.riotgames.com",
-            ddragonURL: "https://ddragon.leagueoflegends.com/cdn/12.23.1"
+            ddragonURL: "https://ddragon.leagueoflegends.com/cdn/13.3.1"
         )
     }
 }

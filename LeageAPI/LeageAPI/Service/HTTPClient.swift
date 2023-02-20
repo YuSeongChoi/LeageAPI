@@ -14,7 +14,8 @@ extension Session {
         let config = URLSessionConfiguration.af.default
         config.timeoutIntervalForRequest = 30
         
-        let eventLogger = APIEventLogger()
+//        let eventLogger = APIEventLogger()
+        let eventLogger = DataMonitor()
         let session = Session(configuration: config, cachedResponseHandler: ResponseCacher.cache, eventMonitors: [eventLogger])
         
         return session
@@ -87,6 +88,55 @@ struct APIEventLogger: EventMonitor {
     
     func requestDidCancel(_ request: Request) {
         print("request가 cancel 되었습니다.")
+    }
+    
+}
+
+struct DataMonitor: EventMonitor {
+    
+    let logger = Logger(
+        subsystem: Bundle.main.bundleIdentifier.unsafelyUnwrapped,
+        category: "Alamofire"
+    )
+    let queue: DispatchQueue = .global(qos: .background)
+    
+    func request<Value>(_ request: DataRequest, didParseResponse response: DataResponse<Value, AFError>) {
+        let result: Result<Data?, AFError>
+        if let error = response.error {
+            result = .failure(error)
+        } else {
+            result = .success(response.data)
+        }
+        let dataResponse = DataResponse(request: response.request, response: response.response, data: response.data, metrics: response.metrics, serializationDuration: response.serializationDuration, result: result)
+        dataRequestDidParseResponse(request, didParseResponse: dataResponse)
+    }
+    
+    func request(_ request: DataRequest, didParseResponse response: DataResponse<Data?, AFError>) {
+        dataRequestDidParseResponse(request, didParseResponse: response)
+    }
+    
+    private func dataRequestDidParseResponse(_ request: DataRequest, didParseResponse response: DataResponse<Data?, AFError>) {
+        var debugDescription = response.debugDescription
+        debugDescription = debugDescription.replacingOccurrences(of: "\n", with: "\n│ ")
+            .replacingOccurrences(of: "(\\[Body]:)\\s*\n│", with: "[Body]:\n ", options: [.regularExpression])
+        
+        if let requestData = response.request?.httpBody,
+           !requestData.isEmpty,
+           debugDescription.contains("[Body]: \(requestData)"),
+           let contentType = response.request?.value(forHTTPHeaderField: "Content-Type"),
+           contentType.lowercased().contains("charset=utf-8") {
+            let requestBody = String(decoding: requestData, as: UTF8.self)
+            debugDescription = debugDescription.replacingOccurrences(of: "[Body]: \(requestData)", with: "[Body]:\n\t\t\(requestBody)")
+        }
+        
+        logger.log(
+            level: .debug,
+            """
+            ┌───────────────────────────────────────────────
+            │ \(debugDescription)
+            └───────────────────────────────────────────────
+            """
+        )
     }
     
 }

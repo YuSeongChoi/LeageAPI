@@ -74,6 +74,30 @@ extension HomeViewModel {
             }.store(in: &cancelBag)
     }
     
+    func requestChampionImage(name: String) async throws {
+        do {
+            try await getChampionImage(name: name)
+        } catch AFError.explicitlyCancelled {
+            
+        }
+    }
+    
+    func requestItemList() async throws {
+        do {
+            try await getItemList()
+        } catch AFError.explicitlyCancelled {
+            
+        }
+    }
+    
+    func requestChampionList() async throws {
+        do {
+            let result = try await getChampionList()
+        } catch AFError.explicitlyCancelled {
+            
+        }
+    }
+    
 }
 
 // MARK: - APIs
@@ -87,76 +111,25 @@ extension HomeViewModel {
             .result.mapError{ $0.underlyingError ?? $0 }.get()
     }
     
-    func getChampionImage(name: String) async throws {
+    private func getChampionImage(name: String) async throws {
         try await HTTPRequestList.ChampionImageRequest(championName: name)
             .buildDataRequest()
             .serializingData(automaticallyCancelling: true)
             .result.mapError{ $0.underlyingError ?? $0 }.get()
     }
     
-    func getItemList() async throws {
+    private func getItemList() async throws {
         try await HTTPRequestList.ItemListRequest()
             .buildDataRequest()
             .serializingData(automaticallyCancelling: true)
             .result.mapError{ $0.underlyingError ?? $0 }.get()
     }
     
-}
-
-extension HomeViewModel {
-    
-    func basicRequest() {
-        let params: Parameters = ["userName": "DS Khan", "age" : 20]
-        
-        AF.request("https://httpbin.org/post", method: .post, parameters: params)
-            .responseDecodable(of: HttpbinResponse.self) { (response: DataResponse<HttpbinResponse, AFError>) -> Void in
-                switch response.result {
-                case .success(let value):
-                    print("[RESPONSE]")
-                    print(response.data?.toPrettyPrintedString)
-                case .failure(let error):
-                    print("API Failure")
-                    print(error)
-                }
-            }
-    }
-    
-    func getRequestByRouter() {
-        let router = APIRouter(path: APIPath.getPractice, httpMethod: .get, parameters: userInfo.toData, apiType: .service)
-        AF.request(router).responseDecodable(of: HttpbinResponse.self) { (response: DataResponse<HttpbinResponse, AFError>) -> Void in
-            switch response.result {
-            case .success(let value):
-                print("[RESPONSE]")
-                print("URL : \(value.url ?? "")")
-                print("Response Data: \(response.data?.toPrettyPrintedString ?? "")")
-            case .failure(let error):
-                print("API Failure")
-                print(error)
-            }
-        }
-    }
-    
-    func postRequestByRouter() {
-        let router = APIRouter(path: APIPath.postPractice, httpMethod: .post, parameters: userInfo.toData, apiType: .service)
-        AF.request(router).responseDecodable(of: HttpbinResponse.self) { response in
-            switch response.result {
-            case .success(let value):
-                print("[RESPONSE]")
-                print("URL : \(value.url ?? "")")
-                print("json body: \(value.json ?? UserInfo())")
-                print("Response Data : \(response.data?.toPrettyPrintedString ?? "")")
-            case .failure(let error):
-                print("API Failure")
-                print(error)
-            }
-        }
-    }
-    
-    func requestUsingSession() {
-        let router = APIRouter(path: APIPath.postPractice, httpMethod: .post, parameters: userInfo.toData, apiType: .service)
-        APIManager.shared.session.request(router).responseDecodable(of: HttpbinResponse.self) { response in
-            print("LCK response : \(response.data?.toPrettyPrintedString)")
-        }
+    private func getChampionList() async throws {
+        try await HTTPRequestList.ChampionListRequest()
+            .buildDataRequest()
+            .serializingData(automaticallyCancelling: true)
+            .result.mapError{ $0.underlyingError ?? $0 }.get()
     }
     
 }

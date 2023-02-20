@@ -16,14 +16,31 @@ struct HomeView: View {
     var body: some View {
         VStack {
             HStack {
-                TextField("유저명", text: $userNameField)
-                    .font(.system(size: 16))
-                    .padding(EdgeInsets(top: 16, leading: 20, bottom: 15, trailing: 20))
-                    .border(R.color.veryLightPink.swiftColor, width: 1)
-                    .background(Color.white)
+                TextField("유저명", text: $userNameField) {
+                    Task {
+                        do {
+                            try await viewModel.requestSummonerInfo(name: userNameField)
+                        } catch {
+                            NetworkAlert.dismissNetworkAlert()
+                        }
+                    }
+                }
                 
-                
+                Button {
+                    Task {
+                        do {
+                            try await viewModel.requestSummonerInfo(name: userNameField)
+                        } catch {
+                            NetworkAlert.dismissNetworkAlert()
+                        }
+                    }
+                    
+                } label: {
+                    Image(systemName: "magnifyingglass")
+                }
             }
+            .padding(EdgeInsets(top: 15, leading: 15, bottom: 15, trailing: 15))
+            .border(R.color.veryLightPink.swiftColor, width: 1)
             
             
             DottedLine()
@@ -31,9 +48,14 @@ struct HomeView: View {
                 .frame(height: 1)
                 .foregroundColor(.gray)
         }
-        .onAppear {
-//            viewModel.requestSummonerInfo2(name: "iOS KING")
-            viewModel.requestSummoerInfo3(name: "Hide on Bush")
+        .async {
+            do {
+                try await viewModel.requestChampionList()
+            } catch  {
+                await MainActor.run {
+                    NetworkAlert.dismissNetworkAlert()
+                }
+            }
         }
     }
     

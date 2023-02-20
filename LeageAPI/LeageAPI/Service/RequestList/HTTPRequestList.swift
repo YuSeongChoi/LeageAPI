@@ -24,7 +24,7 @@ extension HTTPRequestList {
     
     struct ChampionImageRequest: DataRequestFormProtocol, Encodable {
         var base: String { ServerConstant.ddragonURL }
-        var path: String { "img/champion/\(championName).png" }
+        var path: String { "/img/champion/\(championName).png" }
         var method: HTTPMethod { .get }
         var validation: DataRequest.Validation? { nil }
         var championName: String
@@ -32,10 +32,16 @@ extension HTTPRequestList {
     
     struct ItemListRequest: DataRequestFormProtocol, Encodable {
         var base: String { ServerConstant.ddragonURL }
-        var path: String { "data/ko_KR/item.json" }
+        var path: String { "/data/ko_KR/item.json" }
         var method: HTTPMethod { .get }
         var validation: DataRequest.Validation? { nil }
     }
     
+    struct ChampionListRequest: DataRequestFormProtocol, Encodable {
+        var base: String { ServerConstant.ddragonURL }
+        var path: String { "/data/ko_KR/champion.json" }
+        var method: HTTPMethod { .get }
+        var validation: DataRequest.Validation? { nil }
+    }
     
 }
