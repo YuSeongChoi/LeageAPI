@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RswiftResources
 
 struct HomeView: View {
     
@@ -34,7 +35,6 @@ struct HomeView: View {
                             NetworkAlert.dismissNetworkAlert()
                         }
                     }
-                    
                 } label: {
                     Image(systemName: "magnifyingglass")
                 }

@@ -15,6 +15,8 @@ final class HomeViewModel: ObservableObject, Identifiable {
     
     @Published var summonerInfo: SummonerInfo = SummonerInfo()
     @Published var summonerID: String = ""
+    @Published var championData: ChampionVO = .init()
+    
     private var cancelBag = Set<AnyCancellable>()
     
     var userInfo: UserInfo = {
@@ -93,6 +95,8 @@ extension HomeViewModel {
     func requestChampionList() async throws {
         do {
             let result = try await getChampionList()
+            championData = result
+            print("LCK champion : \(championData.data.map(\.key)))")
         } catch AFError.explicitlyCancelled {
             
         }
@@ -125,10 +129,10 @@ extension HomeViewModel {
             .result.mapError{ $0.underlyingError ?? $0 }.get()
     }
     
-    private func getChampionList() async throws {
+    private func getChampionList() async throws -> ChampionVO {
         try await HTTPRequestList.ChampionListRequest()
             .buildDataRequest()
-            .serializingData(automaticallyCancelling: true)
+            .serializingDecodable(ChampionVO.self, automaticallyCancelling: true)
             .result.mapError{ $0.underlyingError ?? $0 }.get()
     }
     

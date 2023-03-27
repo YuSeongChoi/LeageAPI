@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5D1291ED29A34B810003537F /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 5D1291EC29A34B810003537F /* RswiftLibrary */; };
 		5D1291F229A34C7D0003537F /* SwiftUI+Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1291F129A34C7D0003537F /* SwiftUI+Resources.swift */; };
+		5D1291F429A3698F0003537F /* ChampionVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1291F329A3698F0003537F /* ChampionVO.swift */; };
 		5D16E4142924B11B003C217F /* LeageAPIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16E4132924B11B003C217F /* LeageAPIApp.swift */; };
 		5D16E4162924B11B003C217F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16E4152924B11B003C217F /* ContentView.swift */; };
 		5D16E4182924B11F003C217F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D16E4172924B11F003C217F /* Assets.xcassets */; };
@@ -43,11 +44,13 @@
 		5DA4C72529651428009962E3 /* APIPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA4C72429651428009962E3 /* APIPath.swift */; };
 		5DA4C727296514EB009962E3 /* APIEventLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA4C726296514EB009962E3 /* APIEventLogger.swift */; };
 		5DA4C72929653C79009962E3 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA4C72829653C79009962E3 /* APIManager.swift */; };
+		5DAE0B9229B7067600C323E2 /* SandFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAE0B9129B7067600C323E2 /* SandFile.swift */; };
 		5DD1236929347F8C006B78B2 /* SwiftUIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1236829347F8C006B78B2 /* SwiftUIEnvironment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5D1291F129A34C7D0003537F /* SwiftUI+Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+Resources.swift"; sourceTree = "<group>"; };
+		5D1291F329A3698F0003537F /* ChampionVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionVO.swift; sourceTree = "<group>"; };
 		5D16E4102924B11B003C217F /* LeageAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeageAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D16E4132924B11B003C217F /* LeageAPIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeageAPIApp.swift; sourceTree = "<group>"; };
 		5D16E4152924B11B003C217F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,6 +83,7 @@
 		5DA4C72429651428009962E3 /* APIPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPath.swift; sourceTree = "<group>"; };
 		5DA4C726296514EB009962E3 /* APIEventLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEventLogger.swift; sourceTree = "<group>"; };
 		5DA4C72829653C79009962E3 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		5DAE0B9129B7067600C323E2 /* SandFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandFile.swift; sourceTree = "<group>"; };
 		5DD1236829347F8C006B78B2 /* SwiftUIEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIEnvironment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,6 +196,7 @@
 			children = (
 				5D16E43C2924C831003C217F /* Todo.swift */,
 				5D2D4CA22947226600EA0948 /* SummonerInfo.swift */,
+				5D1291F329A3698F0003537F /* ChampionVO.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -237,6 +242,7 @@
 			children = (
 				5D2D4CB029481E3D00EA0948 /* HomeView.swift */,
 				5D2D4CB22948593C00EA0948 /* HomeViewModel.swift */,
+				5DAE0B9129B7067600C323E2 /* SandFile.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -396,6 +402,8 @@
 				5D16E451292B5BD2003C217F /* Color+Extension.swift in Sources */,
 				5DA4C71B29642061009962E3 /* UserInfo.swift in Sources */,
 				5D2D4CB129481E3D00EA0948 /* HomeView.swift in Sources */,
+				5D1291F429A3698F0003537F /* ChampionVO.swift in Sources */,
+				5DAE0B9229B7067600C323E2 /* SandFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
