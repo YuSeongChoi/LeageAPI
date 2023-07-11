@@ -35,6 +35,8 @@
 		5D2D4CB52948594200EA0948 /* ChampionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2D4CB42948594200EA0948 /* ChampionViewModel.swift */; };
 		5D2D4CB72948594600EA0948 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2D4CB62948594600EA0948 /* SettingViewModel.swift */; };
 		5D3817E7296C08EC00E21053 /* DottedLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3817E6296C08EC00E21053 /* DottedLine.swift */; };
+		5D81BCC22A5D225E006565EA /* WindowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D81BCC12A5D225E006565EA /* WindowDelegate.swift */; };
+		5D81BCC52A5D22F5006565EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D81BCC42A5D22F5006565EA /* AppDelegate.swift */; };
 		5DA4C717296411AC009962E3 /* AuthInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA4C716296411AC009962E3 /* AuthInterceptor.swift */; };
 		5DA4C71B29642061009962E3 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA4C71A29642061009962E3 /* UserInfo.swift */; };
 		5DA4C71D296420DF009962E3 /* HttpbinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA4C71C296420DF009962E3 /* HttpbinResponse.swift */; };
@@ -74,6 +76,8 @@
 		5D2D4CB42948594200EA0948 /* ChampionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionViewModel.swift; sourceTree = "<group>"; };
 		5D2D4CB62948594600EA0948 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		5D3817E6296C08EC00E21053 /* DottedLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DottedLine.swift; sourceTree = "<group>"; };
+		5D81BCC12A5D225E006565EA /* WindowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowDelegate.swift; sourceTree = "<group>"; };
+		5D81BCC42A5D22F5006565EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DA4C716296411AC009962E3 /* AuthInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInterceptor.swift; sourceTree = "<group>"; };
 		5DA4C71A29642061009962E3 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		5DA4C71C296420DF009962E3 /* HttpbinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpbinResponse.swift; sourceTree = "<group>"; };
@@ -187,6 +191,8 @@
 				5D16E4132924B11B003C217F /* LeageAPIApp.swift */,
 				5D16E4222924B375003C217F /* ServerConfig.swift */,
 				5D16E4152924B11B003C217F /* ContentView.swift */,
+				5D81BCC42A5D22F5006565EA /* AppDelegate.swift */,
+				5D81BCC12A5D225E006565EA /* WindowDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -385,9 +391,11 @@
 				5D16E43D2924C831003C217F /* Todo.swift in Sources */,
 				5DA4C72129642205009962E3 /* Extension.swift in Sources */,
 				5D2D4CA829481D1200EA0948 /* Constants.swift in Sources */,
+				5D81BCC22A5D225E006565EA /* WindowDelegate.swift in Sources */,
 				5D16E4322924C676003C217F /* HTTPRequestList.swift in Sources */,
 				5D2D4CAD29481E3200EA0948 /* SettingView.swift in Sources */,
 				5DA4C727296514EB009962E3 /* APIEventLogger.swift in Sources */,
+				5D81BCC52A5D22F5006565EA /* AppDelegate.swift in Sources */,
 				5D16E4402924CA98003C217F /* SwiftUI+async.swift in Sources */,
 				5D16E4142924B11B003C217F /* LeageAPIApp.swift in Sources */,
 				5DD1236929347F8C006B78B2 /* SwiftUIEnvironment.swift in Sources */,
@@ -467,7 +475,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -521,7 +529,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -547,7 +555,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -577,7 +585,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
